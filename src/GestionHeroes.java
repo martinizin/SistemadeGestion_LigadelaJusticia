@@ -3,7 +3,12 @@ import java.util.ArrayList;
 public class GestionHeroes {
     private ArrayList<Heroes> heroes = new ArrayList<>();
 
-    public void registrarHeroe(Heroes heroe) {
+    public void registrarHeroe(Heroes heroe) throws Exception {
+        for (Heroes h : heroes) {
+            if (h.getId().equals(heroe.getId())) {
+                throw new Exception("El ID ya está registrado.");
+            }
+        }
         heroes.add(heroe);
     }
 
@@ -34,6 +39,7 @@ public class GestionHeroes {
         }
         return "Héroe no encontrado.";
     }
+
 
     private double calcularImpuestoAnual(double anual) {
         if (anual <= 60000) return 0;

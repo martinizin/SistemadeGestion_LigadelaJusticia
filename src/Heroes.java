@@ -47,9 +47,11 @@ public class Heroes {
         this.mision = mision;
     }
 
+
     public int getNivelDificultad() {
         return nivelDificultad;
     }
+
 
     public void setNivelDificultad(int nivelDificultad) {
         this.nivelDificultad = nivelDificultad;
